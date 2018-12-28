@@ -1,7 +1,7 @@
 import MySQLdb
 
 def pass_check(id, passcode):
-	presql = SELECT * FROM passcode WHERE id = '%s'"
+	presql = SELECT * FROM users WHERE id = '%s'"
 	sql = presql % barcode
 		try:
     	# Execute the SQL command
