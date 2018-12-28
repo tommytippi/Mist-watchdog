@@ -54,4 +54,3 @@ check = pass_check(barcode = barcode, passcode = passcode)
 	else
 		print("code not recognised")
 		# need to return to start, this section will become yet another function
-print("
