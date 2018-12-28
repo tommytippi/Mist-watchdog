@@ -2,9 +2,24 @@ CREATE TABLE users
 (
 barcode TEXT,
 passcode TEXT,
-id TEXT,
+id INT,
 first_name TEXT,
 last_name TEXT,
 role TINYINT,
-status TEXT,
+status_of_1 TEXT,
+status_of_2 TEXT,
+);
+
+CREATE TABLE small
+(
+position INT,
+id INT,
+type TEXT,
+);
+
+CREATE TABLE big
+(
+position INT,
+id INT,
+type TEXT,
 );
