@@ -13,8 +13,8 @@ def pass_check(barcode, passcode):
         passcodetemp = row[1]
 	if passcode != passcodetemp:
     		print("wrongcode")
-    		return false
-	return true
+    		return "false"
+	return "true"
 
 def priv_check(barcode):
 	presql = "SELECT * FROM users WHERE barcode = '%s'"
@@ -27,17 +27,52 @@ def priv_check(barcode):
     	for row in results:
         role = row[5]
 	if role == 1:
-		return normal
+		return "normal"
 	elif role == 2:
-		return operator
+		return "operator"
 	elif role == 3:
-		return admin
+		return "admin"
 	elif: role == 0:
-		return prob
+		return "prob"
 	else:
 		print("a unexpected error occured, please contact a operator")
-		return error
+		return "error"
+
+def get_id(barcode):
+	presql = "SELECT * FROM users WHERE barcode = '%s'"
+	sql = presql % id
+		try:
+    	# Execute the SQL command
+    	cursor.execute(sql)
+    	# Fetch all the rows in a list of lists.
+    	results = cursor.fetchall()
+    	for row in results:
+        id = row[2]
+	return id
+
+def get_status_small(id):
+	presql = "SELECT * FROM users WHERE id = '%s'"
+	sql = presql % id
+		try:
+    	# Execute the SQL command
+    	cursor.execute(sql)
+    	# Fetch all the rows in a list of lists.
+    	results = cursor.fetchall()
+    	for row in results:
+        stat = row[6]
+	return stat
 	
+def get_status_big(id):
+	presql = "SELECT * FROM users WHERE id = '%s'"
+	sql = presql % id
+		try:
+    	# Execute the SQL command
+    	cursor.execute(sql)
+    	# Fetch all the rows in a list of lists.
+    	results = cursor.fetchall()
+    	for row in results:
+        stat = row[7]
+	return stat
 # Open database connection
 db = MySQLdb.connect("localhost","testuser","test123","TESTDB" )
 
