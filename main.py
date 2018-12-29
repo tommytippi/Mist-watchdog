@@ -84,8 +84,8 @@ barcode = input()
 please enter passcode
 passcode = input()
 check = pass_check(barcode = barcode, passcode = passcode)
-	if check == "true"
-		print("code recognised")
-	else
-		print("code not recognised")
-		# need to return to start, this section will become yet another function
+if check != "true"
+	print("code not recognised")
+	print("do you want to register")
+else
+	print("code recognised")
