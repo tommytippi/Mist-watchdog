@@ -16,9 +16,9 @@ def pass_check(barcode, passcode):
     		return "false"
 	return "true"
 
-def priv_check(barcode):
-	presql = "SELECT * FROM users WHERE barcode = '%s'"
-	sql = presql % barcode
+def priv_check(id):
+	presql = "SELECT * FROM users WHERE id = '%s'"
+	sql = presql % id
 		try:
     	# Execute the SQL command
     	cursor.execute(sql)
