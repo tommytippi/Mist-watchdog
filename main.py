@@ -1,8 +1,7 @@
 import MySQLdb
 
 def pass_check(barcode, passcode):
-	presql = "SELECT * FROM users WHERE barcode = '%s'"
-	sql = presql % barcode
+	sql = "SELECT * FROM users WHERE barcode = " + barcode
 		try:
     	# Execute the SQL command
     	cursor.execute(sql)
@@ -17,8 +16,7 @@ def pass_check(barcode, passcode):
 	return "true"
 
 def priv_check(id):
-	presql = "SELECT * FROM users WHERE id = '%s'"
-	sql = presql % id
+	sql = "SELECT * FROM users WHERE id = " + id
 		try:
     	# Execute the SQL command
     	cursor.execute(sql)
@@ -39,8 +37,7 @@ def priv_check(id):
 		return "error"
 
 def get_id(barcode):
-	presql = "SELECT * FROM users WHERE barcode = '%s'"
-	sql = presql % id
+	sql = "SELECT * FROM users WHERE barcode = " + barcode
 		try:
     	# Execute the SQL command
     	cursor.execute(sql)
@@ -51,8 +48,7 @@ def get_id(barcode):
 	return id
 
 def get_status_small(id):
-	presql = "SELECT * FROM users WHERE id = '%s'"
-	sql = presql % id
+	presql = "SELECT * FROM users WHERE id = " + id
 		try:
     	# Execute the SQL command
     	cursor.execute(sql)
@@ -63,8 +59,7 @@ def get_status_small(id):
 	return stat
 	
 def get_status_big(id):
-	presql = "SELECT * FROM users WHERE id = '%s'"
-	sql = presql % id
+	presql = "SELECT * FROM users WHERE id = " + id
 		try:
     	# Execute the SQL command
     	cursor.execute(sql)
