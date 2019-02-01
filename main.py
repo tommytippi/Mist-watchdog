@@ -48,7 +48,7 @@ def get_id(barcode):
 	return id
 
 def get_status_small(id):
-	presql = "SELECT * FROM users WHERE id = " + id
+	sql = "SELECT * FROM users WHERE id = " + id
 		try:
     	# Execute the SQL command
     	cursor.execute(sql)
@@ -68,7 +68,10 @@ def get_status_big(id):
     	for row in results:
         stat = row[7]
 	return stat
-# Open database connection
+
+def register_user(barcode)
+	sql = SELECT * FROM 
+#open database connection
 db = MySQLdb.connect("localhost","testuser","test123","TESTDB" )
 
 # prepare a cursor object using cursor() method
@@ -82,5 +85,6 @@ check = pass_check(barcode = barcode, passcode = passcode)
 if check != "true"
 	print("code not recognised")
 	print("do you want to register")
+	stat = input()
 else
 	print("code recognised")
